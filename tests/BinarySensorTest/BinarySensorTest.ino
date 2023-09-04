@@ -102,6 +102,26 @@ AHA_TEST(BinarySensorTest, device_class) {
     )
 }
 
+AHA_TEST(BinarySensorTest, entity_category_setter) {
+    initMqttTest(testDeviceId)
+
+    HABinarySensor sensor(testUniqueId);
+    sensor.setEntityCategory(HABinarySensor::EntityCategoryConfig);
+
+    assertEntityConfig(
+        mock,
+        sensor,
+        (
+            "{"
+            "\"uniq_id\":\"uniqueSensor\","
+            "\"ent_cat\":\"config\","
+            "\"dev\":{\"ids\":\"testDevice\"},"
+            "\"stat_t\":\"testData/testDevice/uniqueSensor/stat_t\""
+            "}"
+        )
+    )
+}
+
 AHA_TEST(BinarySensorTest, icon_setter) {
     initMqttTest(testDeviceId)
 

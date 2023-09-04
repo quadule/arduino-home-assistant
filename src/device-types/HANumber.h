@@ -107,6 +107,14 @@ public:
         { _class = deviceClass; }
 
     /**
+     * Sets the entity category of the device if different from the default.
+     *
+     * @param entityCategory `EntityCategoryConfig` or `EntityCategoryDiagnostic`
+     */
+    inline void setEntityCategory(EntityCategory entityCategory)
+        { _category = entityCategory; }
+
+    /**
      * Sets icon of the number.
      * Any icon from MaterialDesignIcons.com (for example: `mdi:home`).
      *
@@ -213,6 +221,11 @@ private:
     void handleCommand(const uint8_t* cmd, const uint16_t length);
 
     /**
+     * Returns progmem string representing the entity category.
+     */
+    const __FlashStringHelper* getCategoryProperty() const;
+
+    /**
      * Returns progmem string representing mode of the number
      */
     const __FlashStringHelper* getModeProperty() const;
@@ -227,6 +240,9 @@ private:
 
     /// The device class. It can be nullptr.
     const char* _class;
+
+    /// The entity category.
+    EntityCategory _category;
 
     /// The icon of the number. It can be nullptr.
     const char* _icon;

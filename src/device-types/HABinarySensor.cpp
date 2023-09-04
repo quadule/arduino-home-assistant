@@ -7,6 +7,7 @@
 HABinarySensor::HABinarySensor(const char* uniqueId) :
     HABaseDeviceType(AHATOFSTR(HAComponentBinarySensor), uniqueId),
     _class(nullptr),
+    _category(EntityCategoryDefault),
     _icon(nullptr),
     _currentState(false)
 {
@@ -38,6 +39,11 @@ void HABinarySensor::buildSerializer()
     _serializer->set(AHATOFSTR(HAUniqueIdProperty), _uniqueId);
     _serializer->set(AHATOFSTR(HADeviceClassProperty), _class);
     _serializer->set(AHATOFSTR(HAIconProperty), _icon);
+    _serializer->set(
+        AHATOFSTR(HAEntityCategoryProperty),
+        getCategoryProperty(),
+        HASerializer::ProgmemPropertyValue
+    );
     _serializer->set(HASerializer::WithDevice);
     _serializer->set(HASerializer::WithAvailability);
     _serializer->topic(AHATOFSTR(HAStateTopic));
@@ -61,6 +67,20 @@ bool HABinarySensor::publishState(const bool state)
         AHATOFSTR(state ? HAStateOn : HAStateOff),
         true
     );
+}
+
+const __FlashStringHelper* HABinarySensor::getCategoryProperty() const
+{
+    switch (_category) {
+    case EntityCategoryConfig:
+        return AHATOFSTR(HAEntityCategoryConfig);
+
+    case EntityCategoryDiagnostic:
+        return AHATOFSTR(HAEntityCategoryDiagnostic);
+
+    default:
+        return nullptr;
+    }
 }
 
 #endif

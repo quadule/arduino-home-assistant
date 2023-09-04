@@ -7,6 +7,7 @@
 HASensor::HASensor(const char* uniqueId) :
     HABaseDeviceType(AHATOFSTR(HAComponentSensor), uniqueId),
     _deviceClass(nullptr),
+    _category(EntityCategoryDefault),
     _forceUpdate(false),
     _icon(nullptr),
     _unitOfMeasurement(nullptr)
@@ -31,6 +32,11 @@ void HASensor::buildSerializer()
     _serializer->set(AHATOFSTR(HADeviceClassProperty), _deviceClass);
     _serializer->set(AHATOFSTR(HAIconProperty), _icon);
     _serializer->set(AHATOFSTR(HAUnitOfMeasurementProperty), _unitOfMeasurement);
+    _serializer->set(
+        AHATOFSTR(HAEntityCategoryProperty),
+        getCategoryProperty(),
+        HASerializer::ProgmemPropertyValue
+    );
 
     // optional property
     if (_forceUpdate) {
@@ -54,6 +60,20 @@ void HASensor::onMqttConnected()
 
     publishConfig();
     publishAvailability();
+}
+
+const __FlashStringHelper* HASensor::getCategoryProperty() const
+{
+    switch (_category) {
+    case EntityCategoryConfig:
+        return AHATOFSTR(HAEntityCategoryConfig);
+
+    case EntityCategoryDiagnostic:
+        return AHATOFSTR(HAEntityCategoryDiagnostic);
+
+    default:
+        return nullptr;
+    }
 }
 
 #endif

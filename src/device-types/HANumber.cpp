@@ -8,6 +8,7 @@ HANumber::HANumber(const char* uniqueId, const NumberPrecision precision) :
     HABaseDeviceType(AHATOFSTR(HAComponentNumber), uniqueId),
     _precision(precision),
     _class(nullptr),
+    _category(EntityCategoryDefault),
     _icon(nullptr),
     _retain(false),
     _optimistic(false),
@@ -49,6 +50,11 @@ void HANumber::buildSerializer()
     _serializer->set(AHATOFSTR(HADeviceClassProperty), _class);
     _serializer->set(AHATOFSTR(HAIconProperty), _icon);
     _serializer->set(AHATOFSTR(HAUnitOfMeasurementProperty), _unitOfMeasurement);
+    _serializer->set(
+        AHATOFSTR(HAEntityCategoryProperty),
+        getCategoryProperty(),
+        HASerializer::ProgmemPropertyValue
+    );
     _serializer->set(
         AHATOFSTR(HAModeProperty),
         getModeProperty(),
@@ -177,6 +183,20 @@ void HANumber::handleCommand(const uint8_t* cmd, const uint16_t length)
             number.setPrecision(_precision);
             _commandCallback(number, this);
         }
+    }
+}
+
+const __FlashStringHelper* HANumber::getCategoryProperty() const
+{
+    switch (_category) {
+    case EntityCategoryConfig:
+        return AHATOFSTR(HAEntityCategoryConfig);
+
+    case EntityCategoryDiagnostic:
+        return AHATOFSTR(HAEntityCategoryDiagnostic);
+
+    default:
+        return nullptr;
     }
 }
 

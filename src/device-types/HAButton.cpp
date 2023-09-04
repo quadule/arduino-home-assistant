@@ -7,6 +7,7 @@
 HAButton::HAButton(const char* uniqueId) :
     HABaseDeviceType(AHATOFSTR(HAComponentButton), uniqueId),
     _class(nullptr),
+    _category(EntityCategoryDefault),
     _icon(nullptr),
     _retain(false),
     _commandCallback(nullptr)
@@ -25,6 +26,11 @@ void HAButton::buildSerializer()
     _serializer->set(AHATOFSTR(HAUniqueIdProperty), _uniqueId);
     _serializer->set(AHATOFSTR(HADeviceClassProperty), _class);
     _serializer->set(AHATOFSTR(HAIconProperty), _icon);
+    _serializer->set(
+        AHATOFSTR(HAEntityCategoryProperty),
+        getCategoryProperty(),
+        HASerializer::ProgmemPropertyValue
+    );
 
     // optional property
     if (_retain) {
@@ -66,6 +72,20 @@ void HAButton::onMqttMessage(
         AHATOFSTR(HACommandTopic)
     )) {
         _commandCallback(this);
+    }
+}
+
+const __FlashStringHelper* HAButton::getCategoryProperty() const
+{
+    switch (_category) {
+    case EntityCategoryConfig:
+        return AHATOFSTR(HAEntityCategoryConfig);
+
+    case EntityCategoryDiagnostic:
+        return AHATOFSTR(HAEntityCategoryDiagnostic);
+
+    default:
+        return nullptr;
     }
 }
 

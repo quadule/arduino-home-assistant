@@ -8,6 +8,7 @@ HASelect::HASelect(const char* uniqueId) :
     HABaseDeviceType(AHATOFSTR(HAComponentSelect), uniqueId),
     _options(nullptr),
     _currentState(-1),
+    _category(EntityCategoryDefault),
     _icon(nullptr),
     _retain(false),
     _optimistic(false),
@@ -95,6 +96,11 @@ void HASelect::buildSerializer()
     _serializer->set(AHATOFSTR(HANameProperty), _name);
     _serializer->set(AHATOFSTR(HAUniqueIdProperty), _uniqueId);
     _serializer->set(AHATOFSTR(HAIconProperty), _icon);
+    _serializer->set(
+        AHATOFSTR(HAEntityCategoryProperty),
+        getCategoryProperty(),
+        HASerializer::ProgmemPropertyValue
+    );
     _serializer->set(
         AHATOFSTR(HAOptionsProperty),
         _options,
@@ -193,6 +199,20 @@ uint8_t HASelect::countOptionsInString(const char* options) const
     }
 
     return optionsNb;
+}
+
+const __FlashStringHelper* HASelect::getCategoryProperty() const
+{
+    switch (_category) {
+    case EntityCategoryConfig:
+        return AHATOFSTR(HAEntityCategoryConfig);
+
+    case EntityCategoryDiagnostic:
+        return AHATOFSTR(HAEntityCategoryDiagnostic);
+
+    default:
+        return nullptr;
+    }
 }
 
 #endif

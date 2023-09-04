@@ -40,6 +40,7 @@ const char HANameProperty[] PROGMEM = {"name"};
 const char HAUniqueIdProperty[] PROGMEM = {"uniq_id"};
 const char HADeviceProperty[] PROGMEM = {"dev"};
 const char HADeviceClassProperty[] PROGMEM = {"dev_cla"};
+const char HAEntityCategoryProperty[] PROGMEM = {"ent_cat"};
 const char HAIconProperty[] PROGMEM = {"ic"};
 const char HARetainProperty[] PROGMEM = {"ret"};
 const char HASourceTypeProperty[] PROGMEM = {"src_type"};
@@ -114,6 +115,8 @@ const char HAFalse[] PROGMEM = {"false"};
 const char HAHome[] PROGMEM = {"home"};
 const char HANotHome[] PROGMEM = {"not_home"};
 const char HATrigger[] PROGMEM = {"trigger"};
+const char HAEntityCategoryConfig[] PROGMEM = {"config"};
+const char HAEntityCategoryDiagnostic[] PROGMEM = {"diagnostic"};
 const char HAModeBox[] PROGMEM = {"box"};
 const char HAModeSlider[] PROGMEM = {"slider"};
 

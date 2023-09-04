@@ -40,6 +40,7 @@ extern const char HANameProperty[];
 extern const char HAUniqueIdProperty[];
 extern const char HADeviceProperty[];
 extern const char HADeviceClassProperty[];
+extern const char HAEntityCategoryProperty[];
 extern const char HAIconProperty[];
 extern const char HARetainProperty[];
 extern const char HASourceTypeProperty[];
@@ -114,6 +115,8 @@ extern const char HAFalse[];
 extern const char HAHome[];
 extern const char HANotHome[];
 extern const char HATrigger[];
+extern const char HAEntityCategoryConfig[];
+extern const char HAEntityCategoryDiagnostic[];
 extern const char HAModeBox[];
 extern const char HAModeSlider[];
 

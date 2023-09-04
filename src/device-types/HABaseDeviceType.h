@@ -10,6 +10,12 @@ class HASerializer;
 class HABaseDeviceType
 {
 public:
+    enum EntityCategory {
+        EntityCategoryDefault = 0,
+        EntityCategoryConfig,
+        EntityCategoryDiagnostic
+    };
+
     enum NumberPrecision {
         /// No digits after the decimal point.
         PrecisionP0 = 0,

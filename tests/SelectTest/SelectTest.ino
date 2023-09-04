@@ -208,6 +208,29 @@ AHA_TEST(SelectTest, name_setter) {
     )
 }
 
+AHA_TEST(SelectTest, entity_category_setter) {
+    initMqttTest(testDeviceId)
+
+    HASelect select(testUniqueId);
+    select.setOptions("Option A;B;C");
+    select.setEntityCategory(HASelect::EntityCategoryConfig);
+
+    assertEntityConfig(
+        mock,
+        select,
+        (
+            "{"
+            "\"uniq_id\":\"uniqueSelect\","
+            "\"ent_cat\":\"config\","
+            "\"options\":[\"Option A\",\"B\",\"C\"],"
+            "\"dev\":{\"ids\":\"testDevice\"},"
+            "\"stat_t\":\"testData/testDevice/uniqueSelect/stat_t\","
+            "\"cmd_t\":\"testData/testDevice/uniqueSelect/cmd_t\""
+            "}"
+        )
+    )
+}
+
 AHA_TEST(SelectTest, icon_setter) {
     prepareTest
 

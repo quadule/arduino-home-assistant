@@ -7,6 +7,7 @@
 HASwitch::HASwitch(const char* uniqueId) :
     HABaseDeviceType(AHATOFSTR(HAComponentSwitch), uniqueId),
     _class(nullptr),
+    _category(EntityCategoryDefault),
     _icon(nullptr),
     _retain(false),
     _optimistic(false),
@@ -41,6 +42,11 @@ void HASwitch::buildSerializer()
     _serializer->set(AHATOFSTR(HAUniqueIdProperty), _uniqueId);
     _serializer->set(AHATOFSTR(HADeviceClassProperty), _class);
     _serializer->set(AHATOFSTR(HAIconProperty), _icon);
+    _serializer->set(
+        AHATOFSTR(HAEntityCategoryProperty),
+        getCategoryProperty(),
+        HASerializer::ProgmemPropertyValue
+    );
 
     // optional property
     if (_retain) {
@@ -106,6 +112,20 @@ bool HASwitch::publishState(const bool state)
         AHATOFSTR(state ? HAStateOn : HAStateOff),
         true
     );
+}
+
+const __FlashStringHelper* HASwitch::getCategoryProperty() const
+{
+    switch (_category) {
+    case EntityCategory::EntityCategoryConfig:
+        return AHATOFSTR(HAEntityCategoryConfig);
+
+    case EntityCategory::EntityCategoryDiagnostic:
+        return AHATOFSTR(HAEntityCategoryDiagnostic);
+
+    default:
+        return nullptr;
+    }
 }
 
 #endif

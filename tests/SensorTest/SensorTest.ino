@@ -92,6 +92,26 @@ AHA_TEST(SensorTest, device_class_setter) {
     )
 }
 
+AHA_TEST(SensorTest, entity_category_setter) {
+    initMqttTest(testDeviceId)
+
+    HASensor sensor(testUniqueId);
+    sensor.setEntityCategory(HASensor::EntityCategoryDiagnostic);
+
+    assertEntityConfig(
+        mock,
+        sensor,
+        (
+            "{"
+            "\"uniq_id\":\"uniqueSensor\","
+            "\"ent_cat\":\"diagnostic\","
+            "\"dev\":{\"ids\":\"testDevice\"},"
+            "\"stat_t\":\"testData/testDevice/uniqueSensor/stat_t\""
+            "}"
+        )
+    )
+}
+
 AHA_TEST(SensorTest, force_update_setter) {
     initMqttTest(testDeviceId)
 

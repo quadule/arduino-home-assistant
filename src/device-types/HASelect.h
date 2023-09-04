@@ -67,6 +67,14 @@ public:
         { return _currentState; }
 
     /**
+     * Sets the entity category of the device if different from the default.
+     *
+     * @param entityCategory `EntityCategoryConfig` or `EntityCategoryDiagnostic`
+     */
+    inline void setEntityCategory(EntityCategory entityCategory)
+        { _category = entityCategory; }
+
+    /**
      * Sets icon of the select.
      * Any icon from MaterialDesignIcons.com (for example: `mdi:home`).
      *
@@ -128,6 +136,11 @@ private:
     bool publishState(const int8_t state);
 
     /**
+     * Returns progmem string representing the entity category.
+     */
+    const __FlashStringHelper* getCategoryProperty() const;
+
+    /**
      * Counts the amount of options in the given string.
      */
     uint8_t countOptionsInString(const char* options) const;
@@ -137,6 +150,9 @@ private:
 
     /// Stores the current state (the current option's index). By default it's `-1`.
     int8_t _currentState;
+
+    /// The entity category.
+    EntityCategory _category;
 
     /// The icon of the select. It can be nullptr.
     const char* _icon;

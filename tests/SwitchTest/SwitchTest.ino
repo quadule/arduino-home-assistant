@@ -161,6 +161,27 @@ AHA_TEST(SwitchTest, device_class) {
     )
 }
 
+AHA_TEST(SwitchTest, entity_category_setter) {
+    initMqttTest(testDeviceId)
+
+    HASwitch testSwitch(testUniqueId);
+    testSwitch.setEntityCategory(HASwitch::EntityCategoryConfig);
+
+    assertEntityConfig(
+        mock,
+        testSwitch,
+        (
+            "{"
+            "\"uniq_id\":\"uniqueSwitch\","
+            "\"ent_cat\":\"config\","
+            "\"dev\":{\"ids\":\"testDevice\"},"
+            "\"stat_t\":\"testData/testDevice/uniqueSwitch/stat_t\","
+            "\"cmd_t\":\"testData/testDevice/uniqueSwitch/cmd_t\""
+            "}"
+        )
+    )
+}
+
 AHA_TEST(SwitchTest, icon_setter) {
     prepareTest
 
