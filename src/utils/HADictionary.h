@@ -18,6 +18,7 @@ extern const char HAComponentScene[];
 extern const char HAComponentFan[];
 extern const char HAComponentLight[];
 extern const char HAComponentClimate[];
+extern const char HAComponentText[];
 
 // decorators
 extern const char HASerializerSlash[];
@@ -57,6 +58,7 @@ extern const char HAMinProperty[];
 extern const char HAMaxProperty[];
 extern const char HAStepProperty[];
 extern const char HAModeProperty[];
+extern const char HAPatternProperty[];
 extern const char HACommandTemplateProperty[];
 extern const char HASpeedRangeMaxProperty[];
 extern const char HASpeedRangeMinProperty[];
@@ -119,6 +121,8 @@ extern const char HAEntityCategoryConfig[];
 extern const char HAEntityCategoryDiagnostic[];
 extern const char HAModeBox[];
 extern const char HAModeSlider[];
+extern const char HAModeText[];
+extern const char HAModePassword[];
 
 // covers
 extern const char HAClosedState[];

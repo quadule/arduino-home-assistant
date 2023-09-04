@@ -18,6 +18,7 @@ const char HAComponentScene[] PROGMEM = {"scene"};
 const char HAComponentFan[] PROGMEM = {"fan"};
 const char HAComponentLight[] PROGMEM = {"light"};
 const char HAComponentClimate[] PROGMEM = {"climate"};
+const char HAComponentText[] PROGMEM = {"text"};
 
 // decorators
 const char HASerializerSlash[] PROGMEM = {"/"};
@@ -57,6 +58,7 @@ const char HAMinProperty[] PROGMEM = {"min"};
 const char HAMaxProperty[] PROGMEM = {"max"};
 const char HAStepProperty[] PROGMEM = {"step"};
 const char HAModeProperty[] PROGMEM = {"mode"};
+const char HAPatternProperty[] PROGMEM = {"ptrn"};
 const char HACommandTemplateProperty[] PROGMEM = {"cmd_tpl"};
 const char HASpeedRangeMaxProperty[] PROGMEM = {"spd_rng_max"};
 const char HASpeedRangeMinProperty[] PROGMEM = {"spd_rng_min"};
@@ -119,6 +121,8 @@ const char HAEntityCategoryConfig[] PROGMEM = {"config"};
 const char HAEntityCategoryDiagnostic[] PROGMEM = {"diagnostic"};
 const char HAModeBox[] PROGMEM = {"box"};
 const char HAModeSlider[] PROGMEM = {"slider"};
+const char HAModeText[] PROGMEM = {"text"};
+const char HAModePassword[] PROGMEM = {"password"};
 
 // covers
 const char HAClosedState[] PROGMEM = {"closed"};
