@@ -156,7 +156,7 @@
 <dd><p><a class="reference internal" href="#class_h_a_button"><span class="std std-ref">HAButton</span></a> represents a button that’s displayed in the Home Assistant panel and triggers some logic on your Arduino/ESP device once clicked.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can find more information about this entity in the Home Assistant documentation: <a class="reference external" href="https://www.home-assistant.io/integrations/button.mqtt/">https://www.home-assistant.io/integrations/button.mqtt/</a> </p>
+<p>You can find more information about this entity in the Home Assistant documentation: <a class="reference external" href="https://www.home-assistant.io/integrations/button.mqtt/">https://www.home-assistant.io/integrations/button.mqtt/</a></p>
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
@@ -177,6 +177,17 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>deviceClass</strong> – The class name. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8HAButton17setEntityCategoryE14EntityCategory">
+<span id="_CPPv3N8HAButton17setEntityCategoryE14EntityCategory"></span><span id="_CPPv2N8HAButton17setEntityCategoryE14EntityCategory"></span><span id="HAButton::setEntityCategory__EntityCategory"></span><span class="target" id="class_h_a_button_1a5ca1174f828c765942e86522ae16436a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setEntityCategory</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">EntityCategory</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">entityCategory</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8HAButton17setEntityCategoryE14EntityCategory" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the entity category of the device if different from the default.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entityCategory</strong> – <code class="docutils literal notranslate"><span class="pre">EntityCategoryConfig</span></code> or <code class="docutils literal notranslate"><span class="pre">EntityCategoryDiagnostic</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -234,11 +245,26 @@
 
 </div>
 <div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8HAButton19getCategoryPropertyEv">
+<span id="_CPPv3NK8HAButton19getCategoryPropertyEv"></span><span id="_CPPv2NK8HAButton19getCategoryPropertyEv"></span><span id="HAButton::getCategoryPropertyC"></span><span class="target" id="class_h_a_button_1ab61fcd13b624fdc27e95300028230eea"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">__FlashStringHelper</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getCategoryProperty</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8HAButton19getCategoryPropertyEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns progmem string representing the entity category. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N8HAButton6_classE">
 <span id="_CPPv3N8HAButton6_classE"></span><span id="_CPPv2N8HAButton6_classE"></span><span id="HAButton::_class__cCP"></span><span class="target" id="class_h_a_button_1a872f6b959ec4bc9e7044256fbb44366b"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">_class</span></span></span><a class="headerlink" href="#_CPPv4N8HAButton6_classE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The device class. It can be nullptr. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8HAButton9_categoryE">
+<span id="_CPPv3N8HAButton9_categoryE"></span><span id="_CPPv2N8HAButton9_categoryE"></span><span id="HAButton::_category__EntityCategory"></span><span class="target" id="class_h_a_button_1ad5ff76f3c037a81c050fb42079a2fc66"></span><span class="n"><span class="pre">EntityCategory</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_category</span></span></span><a class="headerlink" href="#_CPPv4N8HAButton9_categoryE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The entity category. </p>
 </dd></dl>
 
 <dl class="cpp var">

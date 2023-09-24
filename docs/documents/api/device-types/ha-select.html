@@ -156,7 +156,7 @@
 <dd><p><a class="reference internal" href="#class_h_a_select"><span class="std std-ref">HASelect</span></a> adds a dropdown with options in the Home Assistant panel.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can find more information about this entity in the Home Assistant documentation: <a class="reference external" href="https://www.home-assistant.io/integrations/button.mqtt/">https://www.home-assistant.io/integrations/button.mqtt/</a> </p>
+<p>You can find more information about this entity in the Home Assistant documentation: <a class="reference external" href="https://www.home-assistant.io/integrations/button.mqtt/">https://www.home-assistant.io/integrations/button.mqtt/</a></p>
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
@@ -222,6 +222,17 @@
 <dt class="sig sig-object cpp" id="_CPPv4NK8HASelect15getCurrentStateEv">
 <span id="_CPPv3NK8HASelect15getCurrentStateEv"></span><span id="_CPPv2NK8HASelect15getCurrentStateEv"></span><span id="HASelect::getCurrentStateC"></span><span class="target" id="class_h_a_select_1aabcc2f518def78d2238ef9e51707be9f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">int8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCurrentState</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8HASelect15getCurrentStateEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns last known state of the select. State represents the index of the option that was set using the setOptions method. By default the state is set to <code class="docutils literal notranslate"><span class="pre">-1</span></code>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8HASelect17setEntityCategoryE14EntityCategory">
+<span id="_CPPv3N8HASelect17setEntityCategoryE14EntityCategory"></span><span id="_CPPv2N8HASelect17setEntityCategoryE14EntityCategory"></span><span id="HASelect::setEntityCategory__EntityCategory"></span><span class="target" id="class_h_a_select_1af75e16471674011c3c68231aff9c6976"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setEntityCategory</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">EntityCategory</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">entityCategory</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8HASelect17setEntityCategoryE14EntityCategory" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the entity category of the device if different from the default.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entityCategory</strong> – <code class="docutils literal notranslate"><span class="pre">EntityCategoryConfig</span></code> or <code class="docutils literal notranslate"><span class="pre">EntityCategoryDiagnostic</span></code></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
@@ -308,6 +319,12 @@
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8HASelect19getCategoryPropertyEv">
+<span id="_CPPv3NK8HASelect19getCategoryPropertyEv"></span><span id="_CPPv2NK8HASelect19getCategoryPropertyEv"></span><span id="HASelect::getCategoryPropertyC"></span><span class="target" id="class_h_a_select_1a53ee03a00bf4962e607d1c821970a5ee"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">__FlashStringHelper</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getCategoryProperty</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8HASelect19getCategoryPropertyEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns progmem string representing the entity category. </p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8HASelect20countOptionsInStringEPKc">
 <span id="_CPPv3NK8HASelect20countOptionsInStringEPKc"></span><span id="_CPPv2NK8HASelect20countOptionsInStringEPKc"></span><span id="HASelect::countOptionsInString__cCPC"></span><span class="target" id="class_h_a_select_1adb23b81e291486851919e246c0e78f57"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">countOptionsInString</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">options</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8HASelect20countOptionsInStringEPKc" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Counts the amount of options in the given string. </p>
@@ -326,6 +343,12 @@
 <dt class="sig sig-object cpp" id="_CPPv4N8HASelect13_currentStateE">
 <span id="_CPPv3N8HASelect13_currentStateE"></span><span id="_CPPv2N8HASelect13_currentStateE"></span><span id="HASelect::_currentState__int8_t"></span><span class="target" id="class_h_a_select_1aaabf788699587ee9c4a0835c20d82ef0"></span><span class="n"><span class="pre">int8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_currentState</span></span></span><a class="headerlink" href="#_CPPv4N8HASelect13_currentStateE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Stores the current state (the current option’s index). By default it’s <code class="docutils literal notranslate"><span class="pre">-1</span></code>. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8HASelect9_categoryE">
+<span id="_CPPv3N8HASelect9_categoryE"></span><span id="_CPPv2N8HASelect9_categoryE"></span><span id="HASelect::_category__EntityCategory"></span><span class="target" id="class_h_a_select_1afdfdb593722326a43bc000e1401a7b9b"></span><span class="n"><span class="pre">EntityCategory</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_category</span></span></span><a class="headerlink" href="#_CPPv4N8HASelect9_categoryE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The entity category. </p>
 </dd></dl>
 
 <dl class="cpp var">

@@ -108,6 +108,9 @@ Supported device types
    * - Tag scanner
      - ✅
      - :doc:`HATagScanner </documents/api/device-types/ha-tag-scanner>`
+   * - Text
+     - ✅
+     - :doc:`HAText </documents/api/device-types/ha-text>`
    * - Vacuum
      - ❌
      - --

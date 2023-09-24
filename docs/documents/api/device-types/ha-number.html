@@ -156,7 +156,7 @@
 <dd><p><a class="reference internal" href="#class_h_a_number"><span class="std std-ref">HANumber</span></a> adds a slider or a box in the Home Assistant panel that controls the numeric value stored on your device.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can find more information about this entity in the Home Assistant documentation: <a class="reference external" href="https://www.home-assistant.io/integrations/number.mqtt/">https://www.home-assistant.io/integrations/number.mqtt/</a> </p>
+<p>You can find more information about this entity in the Home Assistant documentation: <a class="reference external" href="https://www.home-assistant.io/integrations/number.mqtt/">https://www.home-assistant.io/integrations/number.mqtt/</a></p>
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
@@ -329,6 +329,17 @@
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8HANumber17setEntityCategoryE14EntityCategory">
+<span id="_CPPv3N8HANumber17setEntityCategoryE14EntityCategory"></span><span id="_CPPv2N8HANumber17setEntityCategoryE14EntityCategory"></span><span id="HANumber::setEntityCategory__EntityCategory"></span><span class="target" id="class_h_a_number_1adefaad811cb04c0b1e40d059067a4c14"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setEntityCategory</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">EntityCategory</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">entityCategory</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8HANumber17setEntityCategoryE14EntityCategory" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the entity category of the device if different from the default.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entityCategory</strong> – <code class="docutils literal notranslate"><span class="pre">EntityCategoryConfig</span></code> or <code class="docutils literal notranslate"><span class="pre">EntityCategoryDiagnostic</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8HANumber7setIconEPKc">
 <span id="_CPPv3N8HANumber7setIconEPKc"></span><span id="_CPPv2N8HANumber7setIconEPKc"></span><span id="HANumber::setIcon__cCP"></span><span class="target" id="class_h_a_number_1a01b7e8b84921a71155a37631eebd7a0b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setIcon</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">icon</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8HANumber7setIconEPKc" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets icon of the number. Any icon from MaterialDesignIcons.com (for example: <code class="docutils literal notranslate"><span class="pre">mdi:home</span></code>).</p>
@@ -481,6 +492,12 @@
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8HANumber19getCategoryPropertyEv">
+<span id="_CPPv3NK8HANumber19getCategoryPropertyEv"></span><span id="_CPPv2NK8HANumber19getCategoryPropertyEv"></span><span id="HANumber::getCategoryPropertyC"></span><span class="target" id="class_h_a_number_1a6b7a32f9f5d633a8afc5f18eb235b5b0"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">__FlashStringHelper</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getCategoryProperty</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8HANumber19getCategoryPropertyEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns progmem string representing the entity category. </p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8HANumber15getModePropertyEv">
 <span id="_CPPv3NK8HANumber15getModePropertyEv"></span><span id="_CPPv2NK8HANumber15getModePropertyEv"></span><span id="HANumber::getModePropertyC"></span><span class="target" id="class_h_a_number_1a75084de4e344002ec86d592c2bc1754e"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">__FlashStringHelper</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getModeProperty</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8HANumber15getModePropertyEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns progmem string representing mode of the number </p>
@@ -505,6 +522,12 @@
 <dt class="sig sig-object cpp" id="_CPPv4N8HANumber6_classE">
 <span id="_CPPv3N8HANumber6_classE"></span><span id="_CPPv2N8HANumber6_classE"></span><span id="HANumber::_class__cCP"></span><span class="target" id="class_h_a_number_1a6d695fe42f07e43a4fe4fbad5777be5f"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">_class</span></span></span><a class="headerlink" href="#_CPPv4N8HANumber6_classE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The device class. It can be nullptr. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8HANumber9_categoryE">
+<span id="_CPPv3N8HANumber9_categoryE"></span><span id="_CPPv2N8HANumber9_categoryE"></span><span id="HANumber::_category__EntityCategory"></span><span class="target" id="class_h_a_number_1a77735d21422b88e27ed855ee3bf683cd"></span><span class="n"><span class="pre">EntityCategory</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_category</span></span></span><a class="headerlink" href="#_CPPv4N8HANumber9_categoryE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The entity category. </p>
 </dd></dl>
 
 <dl class="cpp var">

@@ -170,55 +170,55 @@ You can pick one depending on your needs.</p>
 <section id="providing-string-const-char-to-the-hadevice-constructor">
 <h3>1) Providing string (const char*) to the <a class="reference internal" href="../api/core/ha-device.html"><span class="doc">HADevice</span></a> constructor<a class="headerlink" href="#providing-string-const-char-to-the-hadevice-constructor" title="Permalink to this headline">¶</a></h3>
 <p>Try to keep the ID simple (alphanumeric characters) and short.</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ArduinoHA.h&gt;</span><span class="cp"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ArduinoHA.h&gt;</span>
 
-<span class="n">HADevice</span><span class="w"> </span><span class="nf">device</span><span class="p">(</span><span class="s">&quot;myUniqueID&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">HADevice</span><span class="w"> </span><span class="n">device</span><span class="p">(</span><span class="s">&quot;myUniqueID&quot;</span><span class="p">);</span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// ...</span>
-<span class="p">}</span><span class="w"></span>
+<span class="p">}</span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// ...</span>
-<span class="p">}</span><span class="w"></span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>
 <section id="providing-byte-array-to-the-hadevice-constructor">
 <h3>2) Providing byte array to the <a class="reference internal" href="../api/core/ha-device.html"><span class="doc">HADevice</span></a> constructor<a class="headerlink" href="#providing-byte-array-to-the-hadevice-constructor" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ArduinoHA.h&gt;</span><span class="cp"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ArduinoHA.h&gt;</span>
 
 <span class="c1">// use your own unique bytes sequence</span>
-<span class="n">byte</span><span class="w"> </span><span class="n">mac</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mh">0x00</span><span class="p">,</span><span class="w"> </span><span class="mh">0x10</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFA</span><span class="p">,</span><span class="w"> </span><span class="mh">0x6E</span><span class="p">,</span><span class="w"> </span><span class="mh">0x38</span><span class="p">,</span><span class="w"> </span><span class="mh">0x4A</span><span class="p">};</span><span class="w"></span>
-<span class="n">HADevice</span><span class="w"> </span><span class="nf">device</span><span class="p">(</span><span class="n">mac</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">mac</span><span class="p">));</span><span class="w"></span>
+<span class="n">byte</span><span class="w"> </span><span class="n">mac</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mh">0x00</span><span class="p">,</span><span class="w"> </span><span class="mh">0x10</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFA</span><span class="p">,</span><span class="w"> </span><span class="mh">0x6E</span><span class="p">,</span><span class="w"> </span><span class="mh">0x38</span><span class="p">,</span><span class="w"> </span><span class="mh">0x4A</span><span class="p">};</span>
+<span class="n">HADevice</span><span class="w"> </span><span class="nf">device</span><span class="p">(</span><span class="n">mac</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">mac</span><span class="p">));</span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// ...</span>
-<span class="p">}</span><span class="w"></span>
+<span class="p">}</span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// ...</span>
-<span class="p">}</span><span class="w"></span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>
 <section id="using-hadevice-setuniqueid-method-during-the-setup">
 <h3>3) Using <a class="reference internal" href="../api/core/ha-device.html"><span class="doc">HADevice::setUniqueId</span></a> method during the setup<a class="headerlink" href="#using-hadevice-setuniqueid-method-during-the-setup" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ArduinoHA.h&gt;</span><span class="cp"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ArduinoHA.h&gt;</span>
 
-<span class="n">HADevice</span><span class="w"> </span><span class="n">device</span><span class="p">;</span><span class="w"></span>
+<span class="n">HADevice</span><span class="w"> </span><span class="n">device</span><span class="p">;</span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// any length is acceptable</span>
-<span class="w">    </span><span class="n">byte</span><span class="w"> </span><span class="n">myId</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mh">0x05</span><span class="p">,</span><span class="w"> </span><span class="mh">0xb4</span><span class="p">,</span><span class="w"> </span><span class="mh">0xc6</span><span class="p">,</span><span class="w"> </span><span class="mh">0x9f</span><span class="p">,</span><span class="w"> </span><span class="mh">0xbe</span><span class="p">,</span><span class="w"> </span><span class="mh">0xce</span><span class="p">,</span><span class="w"> </span><span class="mh">0x8c</span><span class="p">,</span><span class="w"> </span><span class="mh">0x1f</span><span class="p">,</span><span class="w"> </span><span class="mh">0xc7</span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="n">byte</span><span class="w"> </span><span class="n">myId</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mh">0x05</span><span class="p">,</span><span class="w"> </span><span class="mh">0xb4</span><span class="p">,</span><span class="w"> </span><span class="mh">0xc6</span><span class="p">,</span><span class="w"> </span><span class="mh">0x9f</span><span class="p">,</span><span class="w"> </span><span class="mh">0xbe</span><span class="p">,</span><span class="w"> </span><span class="mh">0xce</span><span class="p">,</span><span class="w"> </span><span class="mh">0x8c</span><span class="p">,</span><span class="w"> </span><span class="mh">0x1f</span><span class="p">,</span><span class="w"> </span><span class="mh">0xc7</span><span class="p">};</span>
 <span class="w">    </span><span class="n">device</span><span class="p">.</span><span class="n">setUniqueId</span><span class="p">(</span><span class="n">myId</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">myId</span><span class="p">));</span><span class="w"> </span><span class="c1">// the input array is cloned internally</span>
 
 <span class="w">    </span><span class="c1">// ...</span>
-<span class="p">}</span><span class="w"></span>
+<span class="p">}</span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// ...</span>
-<span class="p">}</span><span class="w"></span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>
@@ -227,22 +227,22 @@ You can pick one depending on your needs.</p>
 <h2>Device properties<a class="headerlink" href="#device-properties" title="Permalink to this headline">¶</a></h2>
 <p>Each property has its corresponding setter method in the <a class="reference internal" href="../api/core/ha-device.html"><span class="doc">HADevice</span></a> class.
 Please note that all these methods accept const char pointer whose <strong>content is not copied</strong>.</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ArduinoHA.h&gt;</span><span class="cp"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ArduinoHA.h&gt;</span>
 
-<span class="n">HADevice</span><span class="w"> </span><span class="nf">device</span><span class="p">(</span><span class="s">&quot;myUniqueId&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">HADevice</span><span class="w"> </span><span class="n">device</span><span class="p">(</span><span class="s">&quot;myUniqueId&quot;</span><span class="p">);</span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">device</span><span class="p">.</span><span class="n">setName</span><span class="p">(</span><span class="s">&quot;Bedroom Light Controller&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">device</span><span class="p">.</span><span class="n">setSoftwareVersion</span><span class="p">(</span><span class="s">&quot;1.0.0&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">device</span><span class="p">.</span><span class="n">setManufacturer</span><span class="p">(</span><span class="s">&quot;Developer Corp.&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">device</span><span class="p">.</span><span class="n">setModel</span><span class="p">(</span><span class="s">&quot;ABC-123&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">device</span><span class="p">.</span><span class="n">setName</span><span class="p">(</span><span class="s">&quot;Bedroom Light Controller&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">device</span><span class="p">.</span><span class="n">setSoftwareVersion</span><span class="p">(</span><span class="s">&quot;1.0.0&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">device</span><span class="p">.</span><span class="n">setManufacturer</span><span class="p">(</span><span class="s">&quot;Developer Corp.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">device</span><span class="p">.</span><span class="n">setModel</span><span class="p">(</span><span class="s">&quot;ABC-123&quot;</span><span class="p">);</span>
 
 <span class="w">    </span><span class="c1">// ...</span>
-<span class="p">}</span><span class="w"></span>
+<span class="p">}</span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// ...</span>
-<span class="p">}</span><span class="w"></span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>

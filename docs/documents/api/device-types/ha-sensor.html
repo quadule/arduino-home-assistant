@@ -160,7 +160,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can find more information about this entity in the Home Assistant documentation: <a class="reference external" href="https://www.home-assistant.io/integrations/sensor.mqtt/">https://www.home-assistant.io/integrations/sensor.mqtt/</a> </p>
+<p>You can find more information about this entity in the Home Assistant documentation: <a class="reference external" href="https://www.home-assistant.io/integrations/sensor.mqtt/">https://www.home-assistant.io/integrations/sensor.mqtt/</a></p>
 </div>
 <p>Subclassed by <a class="reference internal" href="ha-sensor-number.html#class_h_a_sensor_number"><span class="std std-ref">HASensorNumber</span></a></p>
 <div class="breathe-sectiondef docutils container">
@@ -196,6 +196,17 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>deviceClass</strong> – The class name. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8HASensor17setEntityCategoryE14EntityCategory">
+<span id="_CPPv3N8HASensor17setEntityCategoryE14EntityCategory"></span><span id="_CPPv2N8HASensor17setEntityCategoryE14EntityCategory"></span><span id="HASensor::setEntityCategory__EntityCategory"></span><span class="target" id="class_h_a_sensor_1a1913f9b45170430c0383791177c4bb74"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setEntityCategory</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">EntityCategory</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">entityCategory</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8HASensor17setEntityCategoryE14EntityCategory" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the entity category of the device if different from the default.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entityCategory</strong> – <code class="docutils literal notranslate"><span class="pre">EntityCategoryConfig</span></code> or <code class="docutils literal notranslate"><span class="pre">EntityCategoryDiagnostic</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -248,11 +259,26 @@
 
 </div>
 <div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8HASensor19getCategoryPropertyEv">
+<span id="_CPPv3NK8HASensor19getCategoryPropertyEv"></span><span id="_CPPv2NK8HASensor19getCategoryPropertyEv"></span><span id="HASensor::getCategoryPropertyC"></span><span class="target" id="class_h_a_sensor_1a37e39a76993138a72f0930fe8aff272b"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">__FlashStringHelper</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getCategoryProperty</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8HASensor19getCategoryPropertyEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns progmem string representing the entity category. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N8HASensor12_deviceClassE">
 <span id="_CPPv3N8HASensor12_deviceClassE"></span><span id="_CPPv2N8HASensor12_deviceClassE"></span><span id="HASensor::_deviceClass__cCP"></span><span class="target" id="class_h_a_sensor_1a42ff8d2271f7728acf2fb349595862f0"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">_deviceClass</span></span></span><a class="headerlink" href="#_CPPv4N8HASensor12_deviceClassE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The device class. It can be nullptr. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8HASensor9_categoryE">
+<span id="_CPPv3N8HASensor9_categoryE"></span><span id="_CPPv2N8HASensor9_categoryE"></span><span id="HASensor::_category__EntityCategory"></span><span class="target" id="class_h_a_sensor_1a006e7c5788b9aa8f0bceb0e9284fadbd"></span><span class="n"><span class="pre">EntityCategory</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_category</span></span></span><a class="headerlink" href="#_CPPv4N8HASensor9_categoryE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The entity category. </p>
 </dd></dl>
 
 <dl class="cpp var">

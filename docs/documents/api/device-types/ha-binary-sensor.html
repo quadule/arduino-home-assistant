@@ -156,7 +156,7 @@
 <dd><p><a class="reference internal" href="#class_h_a_binary_sensor"><span class="std std-ref">HABinarySensor</span></a> represents a binary sensor that allows publishing on/off state to the Home Assistant panel.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can find more information about this entity in the Home Assistant documentation: <a class="reference external" href="https://www.home-assistant.io/integrations/binary_sensor.mqtt/">https://www.home-assistant.io/integrations/binary_sensor.mqtt/</a> </p>
+<p>You can find more information about this entity in the Home Assistant documentation: <a class="reference external" href="https://www.home-assistant.io/integrations/binary_sensor.mqtt/">https://www.home-assistant.io/integrations/binary_sensor.mqtt/</a></p>
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
@@ -216,6 +216,17 @@
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14HABinarySensor17setEntityCategoryE14EntityCategory">
+<span id="_CPPv3N14HABinarySensor17setEntityCategoryE14EntityCategory"></span><span id="_CPPv2N14HABinarySensor17setEntityCategoryE14EntityCategory"></span><span id="HABinarySensor::setEntityCategory__EntityCategory"></span><span class="target" id="class_h_a_binary_sensor_1a176d124157f4df1551c160ef1b3022bf"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setEntityCategory</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">EntityCategory</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">entityCategory</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14HABinarySensor17setEntityCategoryE14EntityCategory" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the entity category of the device if different from the default.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entityCategory</strong> – <code class="docutils literal notranslate"><span class="pre">EntityCategoryConfig</span></code> or <code class="docutils literal notranslate"><span class="pre">EntityCategoryDiagnostic</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N14HABinarySensor7setIconEPKc">
 <span id="_CPPv3N14HABinarySensor7setIconEPKc"></span><span id="_CPPv2N14HABinarySensor7setIconEPKc"></span><span id="HABinarySensor::setIcon__cCP"></span><span class="target" id="class_h_a_binary_sensor_1ab21b355dd9b19f9f594f12fdf26b4f05"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setIcon</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">icon</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14HABinarySensor7setIconEPKc" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets icon of the sensor. Any icon from MaterialDesignIcons.com (for example: <code class="docutils literal notranslate"><span class="pre">mdi:home</span></code>).</p>
@@ -256,6 +267,12 @@
 </dl>
 </dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK14HABinarySensor19getCategoryPropertyEv">
+<span id="_CPPv3NK14HABinarySensor19getCategoryPropertyEv"></span><span id="_CPPv2NK14HABinarySensor19getCategoryPropertyEv"></span><span id="HABinarySensor::getCategoryPropertyC"></span><span class="target" id="class_h_a_binary_sensor_1a0dad29ec76360aed13be5a380bc1e885"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">__FlashStringHelper</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getCategoryProperty</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK14HABinarySensor19getCategoryPropertyEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns progmem string representing the entity category. </p>
+</dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
@@ -263,6 +280,12 @@
 <dt class="sig sig-object cpp" id="_CPPv4N14HABinarySensor6_classE">
 <span id="_CPPv3N14HABinarySensor6_classE"></span><span id="_CPPv2N14HABinarySensor6_classE"></span><span id="HABinarySensor::_class__cCP"></span><span class="target" id="class_h_a_binary_sensor_1af670394be65514a99f94f7ad689f0ac8"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">_class</span></span></span><a class="headerlink" href="#_CPPv4N14HABinarySensor6_classE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The device class. It can be nullptr. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14HABinarySensor9_categoryE">
+<span id="_CPPv3N14HABinarySensor9_categoryE"></span><span id="_CPPv2N14HABinarySensor9_categoryE"></span><span id="HABinarySensor::_category__EntityCategory"></span><span class="target" id="class_h_a_binary_sensor_1a3cb39071750b15c4b1abf25354ffbe00"></span><span class="n"><span class="pre">EntityCategory</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_category</span></span></span><a class="headerlink" href="#_CPPv4N14HABinarySensor9_categoryE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The entity category. </p>
 </dd></dl>
 
 <dl class="cpp var">

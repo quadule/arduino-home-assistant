@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+      <title>HAText class - ArduinoHA</title>
+    
+          <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="../../../_static/theme.css " type="text/css" />
+          <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/custom.js"></script>
+
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="../../../_static/theme-vendors.js"></script> -->
+      <script src="../../../_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="../../../genindex.html" />
+  <link rel="search" title="Search" href="../../../search.html" />
+  <link rel="next" title="Utils API" href="../utils/index.html" />
+  <link rel="prev" title="HATagScanner class" href="ha-tag-scanner.html" /> 
+  </head>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="../../../index.html" class="home-link">
+    
+      <span class="site-name">ArduinoHA</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+  
+    <div class="nav-item">
+      <a href="https://github.com/dawidchyrzynski/arduino-home-assistant"
+        class="nav-link external">
+          Github <outboundlink></outboundlink>
+      </a>
+    </div>
+  
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+  
+    <div class="nav-item">
+      <a href="https://github.com/dawidchyrzynski/arduino-home-assistant"
+        class="nav-link external">
+          Github <outboundlink></outboundlink>
+      </a>
+    </div>
+  
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="../../../search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  <p class="caption" role="heading"><span class="caption-text">Docs</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/index.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../getting-started/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../getting-started/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../getting-started/compatible-hardware.html">Compatible Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../getting-started/examples.html">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../library/index.html">Library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../library/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../library/device-configuration.html">Device configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../library/availability-reporting.html">Availability reporting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../library/connection-params.html">Connection parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../library/discovery.html">Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../library/device-types.html">Device types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../library/mqtt-security.html">MQTT security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../library/mqtt-advanced.html">MQTT advanced features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../library/compiler-macros.html">Compiler macros</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">API reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../core/index.html">Core API</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Device types API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../utils/index.html">Utils API</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../index.html">API reference</a> &raquo;</li>
+    
+      <li><a href="index.html">Device types API</a> &raquo;</li>
+    
+    <li>HAText class</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="ha-tag-scanner.html"
+       title="previous chapter">← HATagScanner class</a>
+  </li>
+  <li class="next">
+    <a href="../utils/index.html"
+       title="next chapter">Utils API →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <section id="hatext-class">
+<h1>HAText class<a class="headerlink" href="#hatext-class" title="Permalink to this headline">¶</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv46HAText">
+<span id="_CPPv36HAText"></span><span id="_CPPv26HAText"></span><span id="HAText"></span><span class="target" id="class_h_a_text"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HAText</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="ha-base-device-type.html#_CPPv416HABaseDeviceType" title="HABaseDeviceType"><span class="n"><span class="pre">HABaseDeviceType</span></span></a><a class="headerlink" href="#_CPPv46HAText" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference internal" href="#class_h_a_text"><span class="std std-ref">HAText</span></a> adds a input field in the Home Assistant panel that controls the string value stored on your device.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can find more information about this entity in the Home Assistant documentation: <a class="reference external" href="https://www.home-assistant.io/integrations/text.mqtt/">https://www.home-assistant.io/integrations/text.mqtt/</a></p>
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText4ModeE">
+<span id="_CPPv3N6HAText4ModeE"></span><span id="_CPPv2N6HAText4ModeE"></span><span class="target" id="class_h_a_text_1a764885ad958a6a87db035c46fab660aa"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Mode</span></span></span><a class="headerlink" href="#_CPPv4N6HAText4ModeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Represents mode of the string. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText4Mode8ModeTextE">
+<span id="_CPPv3N6HAText4Mode8ModeTextE"></span><span id="_CPPv2N6HAText4Mode8ModeTextE"></span><span class="target" id="class_h_a_text_1a764885ad958a6a87db035c46fab660aaaceaa686aac3b5b8b547653de4a400191"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ModeText</span></span></span><a class="headerlink" href="#_CPPv4N6HAText4Mode8ModeTextE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText4Mode12ModePasswordE">
+<span id="_CPPv3N6HAText4Mode12ModePasswordE"></span><span id="_CPPv2N6HAText4Mode12ModePasswordE"></span><span class="target" id="class_h_a_text_1a764885ad958a6a87db035c46fab660aaa68dbc0856d15a5fe5d8e55c65c91cac2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ModePassword</span></span></span><a class="headerlink" href="#_CPPv4N6HAText4Mode12ModePasswordE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText6HATextEPKcj">
+<span id="_CPPv3N6HAText6HATextEPKcj"></span><span id="_CPPv2N6HAText6HATextEPKcj"></span><span id="HAText::HAText__cCP.unsigned-i"></span><span class="target" id="class_h_a_text_1ac3388dd17d295463cdad28ef18758c4c"></span><span class="sig-name descname"><span class="n"><span class="pre">HAText</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">uniqueId</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">maxLength</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">255</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6HAText6HATextEPKcj" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates instance of the <a class="reference internal" href="#class_h_a_text"><span class="std std-ref">HAText</span></a> entity with the given maximum length.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uniqueId</strong> – The unique ID of the string. It needs to be unique in a scope of your device. </p></li>
+<li><p><strong>maxLength</strong> – The maximum capacity of the string. Home Assistant has a max of 255. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText8setStateEPKcKb">
+<span id="_CPPv3N6HAText8setStateEPKcKb"></span><span id="_CPPv2N6HAText8setStateEPKcKb"></span><span id="HAText::setState__cCP.bC"></span><span class="target" id="class_h_a_text_1a396374f0c0a8871022688fe40004f6c2"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setState</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">state</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">force</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6HAText8setStateEPKcKb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Changes state of the string and publishes MQTT message. Please note that if a new value is the same as previous one, the MQTT message won’t be published.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state</strong> – New state of the string. </p></li>
+<li><p><strong>force</strong> – Forces to update state without comparing it to a previous known state. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if MQTT message has been published successfully. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText15setCurrentStateEPKc">
+<span id="_CPPv3N6HAText15setCurrentStateEPKc"></span><span id="_CPPv2N6HAText15setCurrentStateEPKc"></span><span id="HAText::setCurrentState__cCP"></span><span class="target" id="class_h_a_text_1a824b796b59378f4edc401df604fc9991"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setCurrentState</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">state</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6HAText15setCurrentStateEPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets current state of the string without publishing it to Home Assistant. This method may be useful if you want to change state before connection with MQTT broker is acquired.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>state</strong> – New state of the string. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6HAText15getCurrentStateEv">
+<span id="_CPPv3NK6HAText15getCurrentStateEv"></span><span id="_CPPv2NK6HAText15getCurrentStateEv"></span><span id="HAText::getCurrentStateC"></span><span class="target" id="class_h_a_text_1a4a0293357dfcfb9cc777315da657739c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getCurrentState</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6HAText15getCurrentStateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns last known state of the string. If setState method wasn’t called the initial value will be returned. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText17setEntityCategoryE14EntityCategory">
+<span id="_CPPv3N6HAText17setEntityCategoryE14EntityCategory"></span><span id="_CPPv2N6HAText17setEntityCategoryE14EntityCategory"></span><span id="HAText::setEntityCategory__EntityCategory"></span><span class="target" id="class_h_a_text_1ababe034765a87cf9149abd10c347343b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setEntityCategory</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">EntityCategory</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">entityCategory</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6HAText17setEntityCategoryE14EntityCategory" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the entity category of the device if different from the default.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entityCategory</strong> – <code class="docutils literal notranslate"><span class="pre">EntityCategoryConfig</span></code> or <code class="docutils literal notranslate"><span class="pre">EntityCategoryDiagnostic</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText7setIconEPKc">
+<span id="_CPPv3N6HAText7setIconEPKc"></span><span id="_CPPv2N6HAText7setIconEPKc"></span><span id="HAText::setIcon__cCP"></span><span class="target" id="class_h_a_text_1a4e645903e98db5c404a05173470b1ba0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setIcon</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">icon</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6HAText7setIconEPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets icon of the string. Any icon from MaterialDesignIcons.com (for example: <code class="docutils literal notranslate"><span class="pre">mdi:home</span></code>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>icon</strong> – The icon name. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText9setRetainEKb">
+<span id="_CPPv3N6HAText9setRetainEKb"></span><span id="_CPPv2N6HAText9setRetainEKb"></span><span id="HAText::setRetain__bC"></span><span class="target" id="class_h_a_text_1a8547d53d134f42c6a8dca695bbe1d26c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setRetain</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">retain</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6HAText9setRetainEKb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets retain flag for the string’s command. If set to <code class="docutils literal notranslate"><span class="pre">true</span></code> the command produced by Home Assistant will be retained.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>retain</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText13setOptimisticEKb">
+<span id="_CPPv3N6HAText13setOptimisticEKb"></span><span id="_CPPv2N6HAText13setOptimisticEKb"></span><span id="HAText::setOptimistic__bC"></span><span class="target" id="class_h_a_text_1ab92ecd90733180a5afacbe541f2f9d2e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setOptimistic</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">optimistic</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6HAText13setOptimisticEKb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets optimistic flag for the string state. In this mode the string state doesn’t need to be reported back to the HA panel when a command is received. By default the optimistic mode is disabled.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>optimistic</strong> – The optimistic mode (<code class="docutils literal notranslate"><span class="pre">true</span></code> - enabled, <code class="docutils literal notranslate"><span class="pre">false</span></code> - disabled). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText7setModeEK4Mode">
+<span id="_CPPv3N6HAText7setModeEK4Mode"></span><span id="_CPPv2N6HAText7setModeEK4Mode"></span><span id="HAText::setMode__ModeC"></span><span class="target" id="class_h_a_text_1a0b4a67c50b97fd567d552b50c9849ee2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMode</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N6HAText4ModeE" title="HAText::Mode"><span class="n"><span class="pre">Mode</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">mode</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6HAText7setModeEK4Mode" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets mode of the string. It controls how the string should be displayed in the UI. By default it’s <code class="docutils literal notranslate"><span class="pre">HAText::ModeText</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mode</strong> – Mode to set. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText6setMinEKj">
+<span id="_CPPv3N6HAText6setMinEKj"></span><span id="_CPPv2N6HAText6setMinEKj"></span><span id="HAText::setMin__unsigned-iC"></span><span class="target" id="class_h_a_text_1a0aabdaeaea36d2256ef837e1b8476a68"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMin</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">min</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6HAText6setMinEKj" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the minimum value that can be set from the Home Assistant panel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>min</strong> – The minimal value. By default the value is not set. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText10setPatternEPKc">
+<span id="_CPPv3N6HAText10setPatternEPKc"></span><span id="_CPPv2N6HAText10setPatternEPKc"></span><span id="HAText::setPattern__cCP"></span><span class="target" id="class_h_a_text_1a01a386293fba027a1d5567a8de28e0d9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setPattern</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pattern</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6HAText10setPatternEPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets a regex pattern for client-side validation of the text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pattern</strong> – The regex pattern. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText6setMaxEKj">
+<span id="_CPPv3N6HAText6setMaxEKj"></span><span id="_CPPv2N6HAText6setMaxEKj"></span><span id="HAText::setMax__unsigned-iC"></span><span class="target" id="class_h_a_text_1a72db5e16bed841cbad8c489fe765f117"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMax</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">max</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6HAText6setMaxEKj" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the maximum value that can be set from the Home Assistant panel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>min</strong> – The maximum value. By default the value is not set. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText9onCommandEPFvPKcP6HATextE">
+<span id="_CPPv3N6HAText9onCommandEPFvPKcP6HATextE"></span><span id="_CPPv2N6HAText9onCommandEPFvPKcP6HATextE"></span><span class="target" id="class_h_a_text_1aa8637252c107b8553fc5a4f0815020f2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">onCommand</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">callback</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">str</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv46HAText" title="HAText"><span class="n"><span class="pre">HAText</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">sender</span></span><span class="p"><span class="pre">)</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6HAText9onCommandEPFvPKcP6HATextE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Registers callback that will be called each time the string is changed in the HA panel. Please note that it’s not possible to register multiple callbacks for the same string.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In non-optimistic mode, the string must be reported back to HA using the <a class="reference internal" href="#class_h_a_text_1a396374f0c0a8871022688fe40004f6c2"><span class="std std-ref">HAText::setState</span></a> method. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>callback</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-functions">Protected Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText15buildSerializerEv">
+<span id="_CPPv3N6HAText15buildSerializerEv"></span><span id="_CPPv2N6HAText15buildSerializerEv"></span><span id="HAText::buildSerializer"></span><span class="target" id="class_h_a_text_1aa0770722e7ff8d18077a40ac487c9d17"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">buildSerializer</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N6HAText15buildSerializerEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText15onMqttConnectedEv">
+<span id="_CPPv3N6HAText15onMqttConnectedEv"></span><span id="_CPPv2N6HAText15onMqttConnectedEv"></span><span id="HAText::onMqttConnected"></span><span class="target" id="class_h_a_text_1ad3fd940c55569ab4bfd31b39a0a6c939"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">onMqttConnected</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N6HAText15onMqttConnectedEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText13onMqttMessageEPKcPK7uint8_tK8uint16_t">
+<span id="_CPPv3N6HAText13onMqttMessageEPKcPK7uint8_tK8uint16_t"></span><span id="_CPPv2N6HAText13onMqttMessageEPKcPK7uint8_tK8uint16_t"></span><span id="HAText::onMqttMessage__cCP.uint8_tCP.uint16_tC"></span><span class="target" id="class_h_a_text_1a8701ff77ef7bd574226c7dc7f7c7c693"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">onMqttMessage</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">topic</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">payload</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">length</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N6HAText13onMqttMessageEPKcPK7uint8_tK8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText12publishStateEPKc">
+<span id="_CPPv3N6HAText12publishStateEPKc"></span><span id="_CPPv2N6HAText12publishStateEPKc"></span><span id="HAText::publishState__cCP"></span><span class="target" id="class_h_a_text_1a82325c6e74b99c82e9f982c5be99f2ef"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">publishState</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">state</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6HAText12publishStateEPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Publishes the MQTT message with the given state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>state</strong> – The state to publish. </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the MQTT message has been published successfully. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText13handleCommandEPK7uint8_t">
+<span id="_CPPv3N6HAText13handleCommandEPK7uint8_t"></span><span id="_CPPv2N6HAText13handleCommandEPK7uint8_t"></span><span id="HAText::handleCommand__uint8_tCP"></span><span class="target" id="class_h_a_text_1a6096d10c4549d747426f01973ed71739"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">handleCommand</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">cmd</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6HAText13handleCommandEPK7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Parses the given command and executes the string’s callback with proper value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cmd</strong> – The data of the command. </p></li>
+<li><p><strong>length</strong> – Length of the command. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6HAText19getCategoryPropertyEv">
+<span id="_CPPv3NK6HAText19getCategoryPropertyEv"></span><span id="_CPPv2NK6HAText19getCategoryPropertyEv"></span><span id="HAText::getCategoryPropertyC"></span><span class="target" id="class_h_a_text_1a8e18d7b7a608ec668c20bd528f3436d0"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">__FlashStringHelper</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getCategoryProperty</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6HAText19getCategoryPropertyEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns progmem string representing the entity category. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6HAText15getModePropertyEv">
+<span id="_CPPv3NK6HAText15getModePropertyEv"></span><span id="_CPPv2NK6HAText15getModePropertyEv"></span><span id="HAText::getModePropertyC"></span><span class="target" id="class_h_a_text_1acf826143749dfb9c484ecfac3cd88eb3"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">__FlashStringHelper</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getModeProperty</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6HAText15getModePropertyEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns progmem string representing mode of the string </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText6_classE">
+<span id="_CPPv3N6HAText6_classE"></span><span id="_CPPv2N6HAText6_classE"></span><span id="HAText::_class__cCP"></span><span class="target" id="class_h_a_text_1a221f845121ded87c69962b15515242bf"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">_class</span></span></span><a class="headerlink" href="#_CPPv4N6HAText6_classE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The device class. It can be nullptr. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText9_categoryE">
+<span id="_CPPv3N6HAText9_categoryE"></span><span id="_CPPv2N6HAText9_categoryE"></span><span id="HAText::_category__EntityCategory"></span><span class="target" id="class_h_a_text_1a09204c35ae24e5fa47d1d37abb82f542"></span><span class="n"><span class="pre">EntityCategory</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_category</span></span></span><a class="headerlink" href="#_CPPv4N6HAText9_categoryE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The entity category. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText5_iconE">
+<span id="_CPPv3N6HAText5_iconE"></span><span id="_CPPv2N6HAText5_iconE"></span><span id="HAText::_icon__cCP"></span><span class="target" id="class_h_a_text_1a153cf805d9d3d5a5da79a96257cb27c9"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">_icon</span></span></span><a class="headerlink" href="#_CPPv4N6HAText5_iconE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The icon of the string. It can be nullptr. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText7_retainE">
+<span id="_CPPv3N6HAText7_retainE"></span><span id="_CPPv2N6HAText7_retainE"></span><span id="HAText::_retain__b"></span><span class="target" id="class_h_a_text_1ada9eaedb7464ee45c315542158ee5ccd"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_retain</span></span></span><a class="headerlink" href="#_CPPv4N6HAText7_retainE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The retain flag for the HA commands. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText11_optimisticE">
+<span id="_CPPv3N6HAText11_optimisticE"></span><span id="_CPPv2N6HAText11_optimisticE"></span><span id="HAText::_optimistic__b"></span><span class="target" id="class_h_a_text_1a7294b7beb8bb1e01acbc6e7b785f609a"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_optimistic</span></span></span><a class="headerlink" href="#_CPPv4N6HAText11_optimisticE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The optimistic mode of the string (<code class="docutils literal notranslate"><span class="pre">true</span></code> - enabled, <code class="docutils literal notranslate"><span class="pre">false</span></code> - disabled). </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText5_modeE">
+<span id="_CPPv3N6HAText5_modeE"></span><span id="_CPPv2N6HAText5_modeE"></span><span id="HAText::_mode__Mode"></span><span class="target" id="class_h_a_text_1ad4e4e282e7dfc101853dbd14e5147ab7"></span><a class="reference internal" href="#_CPPv4N6HAText4ModeE" title="HAText::Mode"><span class="n"><span class="pre">Mode</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_mode</span></span></span><a class="headerlink" href="#_CPPv4N6HAText5_modeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Controls how the string should be displayed in the UI. By default it’s <code class="docutils literal notranslate"><span class="pre">HAText::ModeAuto</span></code>. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText9_minValueE">
+<span id="_CPPv3N6HAText9_minValueE"></span><span id="_CPPv2N6HAText9_minValueE"></span><span id="HAText::_minValue__HANumeric"></span><span class="target" id="class_h_a_text_1ac0643cbd7b428a4162b569b6fba039e4"></span><a class="reference internal" href="../utils/ha-numeric.html#_CPPv49HANumeric" title="HANumeric"><span class="n"><span class="pre">HANumeric</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_minValue</span></span></span><a class="headerlink" href="#_CPPv4N6HAText9_minValueE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The minimal value that can be set from the HA panel. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText9_maxValueE">
+<span id="_CPPv3N6HAText9_maxValueE"></span><span id="_CPPv2N6HAText9_maxValueE"></span><span id="HAText::_maxValue__HANumeric"></span><span class="target" id="class_h_a_text_1a71ae7d0ff5b8bbf0712f22ed3609ef3e"></span><a class="reference internal" href="../utils/ha-numeric.html#_CPPv49HANumeric" title="HANumeric"><span class="n"><span class="pre">HANumeric</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_maxValue</span></span></span><a class="headerlink" href="#_CPPv4N6HAText9_maxValueE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The maximum value that can be set from the HA panel. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText8_patternE">
+<span id="_CPPv3N6HAText8_patternE"></span><span id="_CPPv2N6HAText8_patternE"></span><span id="HAText::_pattern__String"></span><span class="target" id="class_h_a_text_1a6fbf45cf9749ab171c65918c23f0c4eb"></span><span class="n"><span class="pre">String</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_pattern</span></span></span><a class="headerlink" href="#_CPPv4N6HAText8_patternE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>A regex pattern for client-side validation. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText13_currentStateE">
+<span id="_CPPv3N6HAText13_currentStateE"></span><span id="_CPPv2N6HAText13_currentStateE"></span><span id="HAText::_currentState__String"></span><span class="target" id="class_h_a_text_1a5dbbdb0dbdbd7f9693108e7ff536d343"></span><span class="n"><span class="pre">String</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_currentState</span></span></span><a class="headerlink" href="#_CPPv4N6HAText13_currentStateE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The current state of the string. By default the value is not set. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6HAText16_commandCallbackE">
+<span id="_CPPv3N6HAText16_commandCallbackE"></span><span id="_CPPv2N6HAText16_commandCallbackE"></span><span class="target" id="class_h_a_text_1a2634d7a55c7849ac73c2c2f12e06271a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">_commandCallback</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">str</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv46HAText" title="HAText"><span class="n"><span class="pre">HAText</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">sender</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv4N6HAText16_commandCallbackE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The callback that will be called when the command is received from the HA. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="ha-tag-scanner.html"
+       title="previous chapter">← HATagScanner class</a>
+  </li>
+  <li class="next">
+    <a href="../utils/index.html"
+       title="next chapter">Utils API →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2022, Dawid Chyrzynski.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
+  </body>
+</html>

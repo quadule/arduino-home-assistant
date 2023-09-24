@@ -21,3 +21,4 @@ Device types API
     ha-sensor-number
     ha-switch
     ha-tag-scanner
+    ha-text
